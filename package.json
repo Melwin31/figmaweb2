@@ -52,11 +52,11 @@
   "engines": {
     "node": "18.x"
   },
-  "scripts": {
+"scripts": {
   "dev": "vite",
-  "build": "vite build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+  "preinstall": "echo PREINSTALL && ls -la node_modules/.bin || true && chmod -R +x ./node_modules/.bin || true",
+  "prebuild": "echo PREBUILD && ls -la node_modules/.bin || true && chmod +x ./node_modules/.bin/vite || true",
+  "build": "sh -c \"echo BUILD_START; ls -la node_modules/.bin || true; npx --no-install vite --version || true; npx vite build\""
 }
 
 }

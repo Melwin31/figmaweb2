@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm ci && chmod -R +x ./node_modules/.bin || true",
+  "installCommand": "npm ci && echo AFTER_INSTALL && ls -la node_modules/.bin || true && chmod -R +x ./node_modules/.bin || true",
   "buildCommand": "npx vite build",
   "outputDirectory": "dist"
 }
