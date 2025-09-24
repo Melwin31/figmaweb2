@@ -51,9 +51,11 @@
   "engines": {
     "node": "18.x"
   },
-  "scripts": {
-    "dev": "vite",
-    "prebuild": "chmod +x ./node_modules/.bin/vite || true",
-    "build": "vite build"
-  }
+ "scripts": {
+  "dev": "vite",
+  "preinstall": "chmod -R +x ./node_modules/.bin || true",
+  "prebuild": "chmod +x ./node_modules/.bin/vite || true",
+  "build": "npx vite build"
+}
+
 }
